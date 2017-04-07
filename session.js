@@ -110,7 +110,7 @@ function handleLoginRequest1(req,res,next,err,data)
    var invalidPasswordErrorMessage = "Invalid password";
 
    if (err) next(err);
-   else if (data.rows.length != 1) {
+   else if (data.length != 1) {
       return res.render("login", { userName : username,
 				      password : "",
 				      loginError : invalidUserNameErrorMessage } );
