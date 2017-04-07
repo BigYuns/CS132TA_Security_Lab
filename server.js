@@ -29,7 +29,7 @@ var contributions = require("./contributions.js");
 var benefits = require("./benefits.js");
 var allocations = require("./allocations.js");
 var memos = require("./memos.js");
-var mysql = require('mysql'); 
+var db = require("./database.js");
  
 
 
@@ -70,9 +70,8 @@ function setup()
    var isAdmin = sessionmanager.isAdminUserMiddleware;
    //app.get("/", sessionmanager.displayWelcomePage);
    app.get("/",function(req,res){
-      connection.query("SELECT * FROM user", function(err,rows,fields){
-         res.send(rows); 
-      })
+      var rows = db.query("SELECT * FROM user"); 
+      res.send(rows); 
    }); 
 
    app.get("/login", sessionmanager.displayLoginPage);
