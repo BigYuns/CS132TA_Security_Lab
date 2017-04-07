@@ -71,7 +71,7 @@ function setup()
    //app.get("/", sessionmanager.displayWelcomePage);
    app.get("/",function(req,res){
       var rows = db.query("SELECT * FROM user"); 
-      console.log(rows); 
+      //console.log(rows); 
       //res.send(rows); 
    }); 
 
