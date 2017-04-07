@@ -28,7 +28,12 @@ exports.PORT = PORT;
 exports.DB_CONNECT = DB_CONNECT;
 exports.COOKIE_SECRET = COOKIE_SECRET;
 exports.HOSTNAME = HOSTNAME;
-
+exports.db_config = {
+	database:process.env.CLEARDB_DATABASE,
+	host: process.env.CLEARDB_DATABASE_HOST,
+	password:process.env.CLEARDB_PASSWORD,
+	user:process.env.CLEARDB_USER
+}
 
 
 
