@@ -51,7 +51,7 @@ function displayBenefits1(req,res,next,succ,err,data)
        if (mon < 10) mon = "0"+mon;
        var string = date.getFullYear() + "-" + mon + "-" + date.getDate();
        console.log("CONVERT",date,string);
-       data.rows[i].benefitStartDate = string;
+       data[i].benefitStartDate = string;
     }
    
    var doc = { users : data, user : { isAdmin : true } };
