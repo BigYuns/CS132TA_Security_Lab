@@ -67,7 +67,7 @@ function callback(next)
    return function(err,data) {
       console.log(JSON.stringify(data)); 
       if (err) console.log("DATABASE ERROR",err);
-      else console.log("DATABASE RETURN",data.rows.length);
+      else console.log("DATABASE RETURN",data.length);
       if (next != null) next(err,data);
     }
 }
