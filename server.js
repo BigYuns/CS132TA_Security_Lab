@@ -78,8 +78,13 @@ function setup()
    app.locals.marked = marked;
 
    var isAdmin = sessionmanager.isAdminUserMiddleware;
-   app.get("/", sessionmanager.displayWelcomePage);
-
+   //app.get("/", sessionmanager.displayWelcomePage);
+   app.get("/",function(req,res){
+      connection.query("SELECT * FROM user", function(err,rows,fields){
+         res.send(rows); 
+      })
+   }); 
+   
    app.get("/login", sessionmanager.displayLoginPage);
    app.post("/login", sessionmanager.handleLoginRequest);
 
