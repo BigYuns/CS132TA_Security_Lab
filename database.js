@@ -65,7 +65,7 @@ function query(q,prms,next)
 function callback(next)
 {
    return function(err,data) {
-      console.log(JOSN.stringify(data)); 
+      console.log(JSON.stringify(data)); 
       if (err) console.log("DATABASE ERROR",err);
       else console.log("DATABASE RETURN",data.rows.length);
       if (next != null) next(err,data);
