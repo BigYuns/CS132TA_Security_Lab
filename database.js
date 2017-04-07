@@ -19,7 +19,7 @@ var config = require("./config.js");
 /*										*/
 /********************************************************************************/
 
-var pool = adb.createPool(config.DB_CONNECT,{ min : 1, max : 4 });
+//var pool = adb.createPool(config.DB_CONNECT,{ min : 1, max : 4 });
 
 
 

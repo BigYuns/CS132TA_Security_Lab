@@ -29,6 +29,7 @@ var contributions = require("./contributions.js");
 var benefits = require("./benefits.js");
 var allocations = require("./allocations.js");
 var memos = require("./memos.js");
+var mysql = require('mysql'); 
  
 
 
@@ -61,7 +62,17 @@ function setup()
    app.use(express.static(__dirname + "/app/assets"));
    
    app.use(logger('combined'));
-   
+   //make a connection to DB. 
+   var connection = mysql.createConnection(config.db_config); 
+   connection.connect(function(err){
+      if(err){
+         console.log('69', err); 
+      }else{
+         console.log("CONNECTED"); 
+      }
+   });
+
+
    // intialize marked library
    marked.setOptions({ });
    app.locals.marked = marked;
