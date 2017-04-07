@@ -116,7 +116,7 @@ function handleLoginRequest1(req,res,next,err,data)
 				      loginError : invalidUserNameErrorMessage } );
     }
    else {
-      var userdata = data.rows[0];
+      var userdata = data[0];
       if (!comparePassword(password,userdata.password)) {
 	 return res.render("login", { userName : username,
 				      password : "",
