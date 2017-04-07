@@ -382,9 +382,12 @@ function displayWelcomePage(req,res,next)
 
 function displayWelcomePage1(req,res,next,err,data)
 {
+  console.log("displayWelcomePage is called"); 
+  console.log(next); 
    if (err != null) return next(err);
 
    var user = data.rows[0];
+   console.log(user); 
    return res.render("dashboard",user);
 }
 
