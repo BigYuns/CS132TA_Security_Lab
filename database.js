@@ -48,9 +48,10 @@ function query(q,prms,next)
       prms = undefined;
     }
 
-   console.log("DATABASE:",q);
+   
 
    q = fixQuery(q);
+   console.log("DATABASE:",q);
 
    //return pool.query(q,prms,callback(next));
    
