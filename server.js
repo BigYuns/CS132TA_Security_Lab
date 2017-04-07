@@ -64,6 +64,9 @@ function setup()
    app.use(logger('combined'));
    //make a connection to DB. 
    var connection = mysql.createConnection(config.db_config); 
+   
+   console.log(config.db_config); 
+
    connection.connect(function(err){
       if(err){
          console.log('69', err); 
@@ -84,7 +87,7 @@ function setup()
          res.send(rows); 
       })
    }); 
-   
+
    app.get("/login", sessionmanager.displayLoginPage);
    app.post("/login", sessionmanager.handleLoginRequest);
 
