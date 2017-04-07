@@ -43,7 +43,10 @@ var config = require("./config.js");
 
 function query(q,prms,next)
 {
+   console.log("db query is called"); 
+   console.log(prms);
    if (prms instanceof Function) {
+      console.log("prm instanceof Function"); 
       next = prms;
       prms = undefined;
     }
