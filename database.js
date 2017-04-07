@@ -53,9 +53,14 @@ function query(q,prms,next)
    q = fixQuery(q);
    console.log("DATABASE:",q);
 
-   //return pool.query(q,prms,callback(next));
+   //return pool.query(q,prms,callback(next)); 
+   connection.query(q, function(err, rows,fields){
+      //console.log(rows); 
+      return rows
+
+   }); 
    
-   return connection.query(q);
+   //return connection.query(q);
 }
 
 
