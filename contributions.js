@@ -44,7 +44,7 @@ function displayContributions1(req,res,next,sts,err,data)
 {
    if (err) return next(err);
 
-   var contrib = data.rows[0];
+   var contrib = data[0];
    if (sts == true) contrib.updateSuccess = true;
 
    return res.render("contributions",contrib);
