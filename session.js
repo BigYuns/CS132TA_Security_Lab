@@ -29,6 +29,7 @@ function isAdminUserMiddleware(req,res,next)
    if (req.session.userId) {
       var q = "SELECT * FROM User WHERE userId = " + req.session.userId;
       db.query(q,function (e1,d1) { isAdminUserMiddleware1(req,res,next,e1,d1) } );
+      console.log("query returned"); 
     }
    else {
       console.log("redirecting to login");
