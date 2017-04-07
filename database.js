@@ -57,14 +57,7 @@ function query(q,prms,next)
    console.log("DATABASE:",q);
 
    //return pool.query(q,prms,callback(next)); 
-   return connection.query(q, function(err, rows,fields){
-      //console.log(rows); 
-      //console.log("HIIIIIIII"); 
-      //console.log(rows); 
-      //return rows
-
-   }); 
-   
+   return connection.query(q, prms, callback(next)); 
    //return connection.query(q);
 }
 
