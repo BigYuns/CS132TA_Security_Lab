@@ -68,12 +68,12 @@ function setup()
    app.locals.marked = marked;
 
    var isAdmin = sessionmanager.isAdminUserMiddleware;
-   //app.get("/", sessionmanager.displayWelcomePage);
-   app.get("/",function(req,res){
+   app.get("/", sessionmanager.displayWelcomePage);
+  /* app.get("/",function(req,res){
       var rows = db.query("SELECT * FROM user"); 
       //console.log(rows); 
       //res.send(rows); 
-   }); 
+   }); */
 
    app.get("/login", sessionmanager.displayLoginPage);
    app.post("/login", sessionmanager.handleLoginRequest);

@@ -56,8 +56,8 @@ function query(q,prms,next)
    //return pool.query(q,prms,callback(next)); 
    connection.query(q, function(err, rows,fields){
       //console.log(rows); 
-      console.log("HIIIIIIII"); 
-      console.log(rows); 
+      //console.log("HIIIIIIII"); 
+      //console.log(rows); 
       return rows
 
    }); 
