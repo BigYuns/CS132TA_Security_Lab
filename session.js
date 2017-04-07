@@ -40,6 +40,7 @@ function isAdminUserMiddleware(req,res,next)
 function isAdminUserMiddleware1(req,res,next,err,data)
 {
    if (err == null && data.rows.length == 1 && data.rows[0].isAdmin) {
+      console.log("testing"); 
       next();
     }
    else {
