@@ -8,6 +8,7 @@
 
 
 var adb = require("any-db");
+var mysql = require('mysql'); 
 
 var config = require("./config.js");
 
@@ -21,7 +22,17 @@ var config = require("./config.js");
 
 //var pool = adb.createPool(config.DB_CONNECT,{ min : 1, max : 4 });
 
+ var connection = mysql.createConnection(config.db_config); 
+   
+   console.log(config.db_config); 
 
+   connection.connect(function(err){
+      if(err){
+         console.log('69', err); 
+      }else{
+         console.log("CONNECTED"); 
+      }
+   });
 
 
 /********************************************************************************/
@@ -41,7 +52,9 @@ function query(q,prms,next)
 
    q = fixQuery(q);
 
-   return pool.query(q,prms,callback(next));
+   //return pool.query(q,prms,callback(next));
+   
+   return connection.query(q);
 }
 
 

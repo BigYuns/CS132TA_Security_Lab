@@ -62,19 +62,6 @@ function setup()
    app.use(express.static(__dirname + "/app/assets"));
    
    app.use(logger('combined'));
-   //make a connection to DB. 
-   var connection = mysql.createConnection(config.db_config); 
-   
-   console.log(config.db_config); 
-
-   connection.connect(function(err){
-      if(err){
-         console.log('69', err); 
-      }else{
-         console.log("CONNECTED"); 
-      }
-   });
-
 
    // intialize marked library
    marked.setOptions({ });
